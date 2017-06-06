@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-      "node": ">=7.10.0"
+    "node": ">=7.10.0"
   },
   "scripts": {
     "start": "node ./bin/www"
@@ -14,6 +14,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
+    "mongodb": "^2.2.28",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
   }
