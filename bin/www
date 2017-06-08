@@ -12,7 +12,11 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+<<<<<<< HEAD
 var port = normalizePort(process.env.PORT || '4000');
+=======
+var port = normalizePort(process.env.PORT || '3000');
+>>>>>>> test
 app.set('port', port);
 
 /**
@@ -87,5 +91,8 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+<<<<<<< HEAD
   console.log('http://localhost:4000')
+=======
+>>>>>>> test
 }

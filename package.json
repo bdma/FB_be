@@ -2,9 +2,12 @@
   "name": "fb-be",
   "version": "0.0.0",
   "private": true,
+<<<<<<< HEAD
   "engines": {
     "node": ">=7.10.0"
   },
+=======
+>>>>>>> test
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -14,7 +17,10 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
+<<<<<<< HEAD
     "mongodb": "^2.2.28",
+=======
+>>>>>>> test
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
   }
