@@ -29,7 +29,11 @@ var dbutile = {
     , function (err, result) {
       assert.equal(err, null);
       console.log("Inserted 1 document into the collection");
-      res.send('inserted!');
+      res.send({
+            code:'0',
+            message:"successed",
+            data:result
+          });
     });
   },
   insertMany: function (collection, objs, res) {
