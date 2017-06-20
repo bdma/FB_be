@@ -8,7 +8,19 @@ var dbutile = {
       assert.equal(err, null);
       console.log("Found the following records");
       console.log(docs)
-      res.send(docs);
+      if(docs.length>0){
+        res.send({
+            code:'0',
+            message:"successed",
+            data:docs
+          });
+      }else{
+        res.send({
+            code:'1',
+            message:"not find",
+            data:docs
+          });
+      }
     });
   },
   insertOne: function (collection, obj, res) {

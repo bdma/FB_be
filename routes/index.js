@@ -14,11 +14,11 @@ MongoClient.connect(url, function (err, db) {
   assert.equal(null, err);
   console.log("Connected successfully to server");
 
-  router.get('/org', function (req, res) {
+  router.get('/org/:orgid', function (req, res) {
     let collection = db.collection('orgs');
-    dbutile.find(collection, {_id: req.query.orgid}, res)
+    dbutile.find(collection, { _id: req.params.orgid }, res)
     console.log("ip:", req.ip)
-    console.log("req.query.orgid:", {_id: req.query.orgid})
+    console.log("req.query.orgid:", { _id: req.query.orgid })
     // res.render('index', { title: 'Express' });
   });
   router.get('/insertorg', function (req, res) {
@@ -35,12 +35,19 @@ MongoClient.connect(url, function (err, db) {
     let collection = db.collection('orgs');
     dbutile.deleteMany(collection, res)
   });
-  router('/feedback').post(function (req, res) {
+  router.post('/feedback', function (req, res) {
     console.log(req.body);
-    res.send(req.body)
-    // let collection = db.collection('orgs');
+    // let collection = db.collection('feedbacks');
     // dbutile.insertOne(collection, org, res)
+    res.send(req.body)
   });
+  // route('/feedback').post(function (req, res) {
+  //   console.log(req.body);
+  //   res.send(req.body)
+  //   // let collection = db.collection('orgs');
+  //   // dbutile.insertOne(collection, org, res)
+  //   // next();
+  // });
 
 
   // db.close();

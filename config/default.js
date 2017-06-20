@@ -1,7 +1,7 @@
 var config = {
   orgs: [
     {
-      _id: "1",
+      id: "1",
       orgName: "绘本学堂",
       form: {
         name: "姓名",
