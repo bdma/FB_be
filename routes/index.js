@@ -5,7 +5,8 @@ var router = express.Router();
 var dbutile = require('../mongo/db');
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
-var url = 'mongodb://fbmongodb:BbH6PnuXgCvvXyMrZzUwzgD2tmCSFhFExD1Yf4i4LerOm33xBhCwFUoiraXlqKJE1NrVUmLJVeqqg89lizAGHw==@fbmongodb.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false';
+// var url = 'mongodb://fbmongodb:BbH6PnuXgCvvXyMrZzUwzgD2tmCSFhFExD1Yf4i4LerOm33xBhCwFUoiraXlqKJE1NrVUmLJVeqqg89lizAGHw==@fbmongodb.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false';
+var url = 'mongodb://localhost:27017/test';
 var config = require('../config/default.js');
 
 
@@ -16,7 +17,7 @@ MongoClient.connect(url, function (err, db) {
 
   router.get('/org/:orgid', function (req, res) {
     let collection = db.collection('orgs');
-    dbutile.find(collection, { _id: req.params.orgid }, res)
+    dbutile.find(collection, { id: req.params.orgid }, res)
     console.log("ip:", req.ip)
     console.log("req.query.orgid:", { _id: req.query.orgid })
     // res.render('index', { title: 'Express' });
