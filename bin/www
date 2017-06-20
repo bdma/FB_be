@@ -88,4 +88,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
   console.log('http://localhost:4000')
+  console.log('addr:',addr)
 }
