@@ -36,6 +36,20 @@ var dbutile = {
           });
     });
   },
+  updateOne: function (collection, obj, nobj, res) {
+    collection.updateOne(
+      obj,
+      nobj
+    , function (err, result) {
+      assert.equal(err, null);
+      console.log("updateOne 1 document into the collection");
+      res.send({
+            code:'0',
+            message:"successed",
+            data:result
+          });
+    });
+  },
   insertMany: function (collection, objs, res) {
     collection.insertMany(
       objs

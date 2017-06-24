@@ -26,26 +26,27 @@ app.use(index);
 // app.use('/user', users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  res.status(err.status || 500);
-  console.log(err.stack)
-  // res.send(err.stack);
-  // res.send('errorsad');
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   res.status(err.status || 500);
+//   console.log(err.stack)
+//   // res.send(err.stack);
+//   // res.send('errorsad');
+//   next(err);
+// });
 
 // error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.message = err.message;
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.send(res);
-  // res.status(404).send('未找到当前路由');  
+  // // render the error page
+  // res.status(err.status || 500);
+  // res.send(res);
+  console.error(err.stack);
+  res.status(404).send('未找到当前路由');  
 });
 
 module.exports = app;
